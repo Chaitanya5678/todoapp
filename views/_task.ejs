@@ -1,0 +1,20 @@
+<li>
+    <p>
+        <%= task.description %> <br><br>
+
+        <small>Due Date : <i><%= task.duedate %></i></small><br>
+
+        <% if(task.duedate < Date.now()) { %>
+
+            <small>Alert: Deadline crossed </small><br>
+
+        <% }%> 
+
+        <small>Category : <i><%= task.category %></i></small><br><br>
+
+        <small>
+            <a href="/tasks/destroy/<%= task.id %> "><button id="delete-button">DELETE</button></a>
+        </small>
+    </p>
+</li>
+<hr>    

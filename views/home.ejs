@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="/css/styles.css">
+
+<div id="home-container">
+
+    <section>
+
+        <h1>TODO App</h1>
+        <hr>
+
+
+        <form action="/tasks/create" id="new-task-form" method="POST">
+            <p>DESCRIPTION</p>
+            <textarea name="description" cols="50" rows="5" placeholder="What do you need to do?" required></textarea><hr>
+            <p>CATEGORY</p>
+            <label for="categories">Choose a Category:</label>
+            <select name="category" id="categories">
+                <option value="Personal">Personal</option>
+                <option value="Work">Work</option>
+                <option value="School">School</option>
+                <option value="Cleaning">Cleaning</option>
+            </select><hr>
+
+            <p>DUE DATE</p>
+            <input type="date" name="duedate"><hr><br>
+
+            <input type="submit" value="ADD TASK" id="add-button"><br><br><hr><br>
+        </form>
+
+    </section>
+
+    <section id="tasks-list">
+
+        <h4>My Tasks</h4>
+
+        <ul >
+            <% for(task of tasks){ %>
+
+                <%- include('_task') %>     
+        
+            <% } %> 
+        </ul>
+
+    </section>
+
+</div>
